@@ -1,0 +1,93 @@
+@import "../../style.scss";
+
+.leftBar {
+  @include themify($themes) {
+    flex: 2;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 20px;
+
+      hr {
+        margin: 20px 0px;
+        border: none;
+        height: 0.5px;
+        background-color: themed("border");
+      }
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span {
+          font-size: 12px;
+          color: themed("textColor");
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: themed("textColor");
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+          span {
+            font-size: 18px;
+            font-weight: 600;
+          }
+        }
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+          span {
+            font-size: 14px;
+            color: themed("textColor");
+          }
+        }
+      }
+    }
+  }
+}
+
+// .leftBar::-webkit-scrollbar {
+//   // display: none;
+//   width: 6px;
+// }
+
+// /* Track */
+// .leftBar::-webkit-scrollbar-track {
+//   // display: block;
+//   background: #f1f1f1;
+// }
+
+// /* Handle */
+// .leftBar::-webkit-scrollbar-thumb {
+//   // display: block;
+//   background: #c1c1c1;
+// }
+
+// /* Handle on hover */
+// .leftBar::-webkit-scrollbar-thumb:hover {
+//   // display: block;
+//   background: #555;
+// }

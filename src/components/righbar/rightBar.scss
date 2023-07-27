@@ -1,0 +1,98 @@
+@import "../../style.scss";
+
+.rightBar {
+  @include themify($themes) {
+    flex: 3;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        background-color: themed("bgSoft");
+        padding: 20px;
+        border-radius: 10px;
+        gap: 20px;
+
+        span {
+          color: themed("textColorSoft");
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          // margin: 20px 0;
+
+          .userInfo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 15px;
+            position: relative;
+
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+
+            .online {
+              width: 12px;
+              height: 12px;
+              background-color: limegreen;
+              border-radius: 50%;
+              position: absolute;
+              top: 0;
+              left: 30px;
+            }
+
+            span {
+              color: themed("textColor");
+              font-weight: 500;
+              text-transform: lowercase;
+            }
+          }
+          span {
+            font-size: 15px;
+          }
+          .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button {
+              border: none;
+              color: white;
+              padding: 7px;
+              cursor: pointer;
+              border-radius: 5px;
+
+              &:first-child {
+                background-color: #5271ff;
+              }
+              &:last-child {
+                background-color: #f0544f;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

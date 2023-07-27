@@ -1,0 +1,21 @@
+@import "../../style.scss";
+
+.profileNavbar {
+  @include themify($themes) {
+    padding: 10px 20px;
+    // height: 70px;
+    background-color: themed("bg");
+    
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+
+      a{
+        text-decoration: none;
+        color: themed("textColor");
+      }
+    }
+  }
+}
